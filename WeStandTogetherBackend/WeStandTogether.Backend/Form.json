@@ -2,7 +2,7 @@
   "form": [
     {
       "id": 1,
-      "question": "Do you think that you or a member of your family have changed their behavior or interests to make your partner happy?",
+      "question": "Do they think that they or a member of their family have changed their behavior or interests to make their partner happy?",
       "answers": [
         {
           "id": 1,
@@ -14,13 +14,32 @@
         }
       ],
       "nextQuestionId": [
-        {"answerId": 1, "questionId":  2},
-        {"answerId": 2, "questionId":  2}
-      ]
+        {
+          "answerId": 1,
+          "questionId": 2
+        },
+        {
+          "answerId": 2,
+          "questionId": 2
+        }
+      ],
+      "abuseType" : {
+        "controllingBehaviour": 1,
+        "forcingSubmissiveBehaviour": 0.5,
+        "imposingIdeasOrBehaviour": 1,
+        "techAbuse": 0,
+        "jealousy": 0,
+        "abuseByIsolation": 0,
+        "onlineHarassment": 0,
+        "psychologicalAbuse": 0,
+        "physicalAbuse": 0,
+        "verbalAbuse": 0,
+        "financialAbuse": 0
+      }
     },
     {
       "id": 2,
-      "question": "Are you constantly worried about your location?",
+      "question": "Are they constantly worried about their location?",
       "answers": [
         {
           "id": 1,
@@ -32,13 +51,32 @@
         }
       ],
       "nextQuestionId": [
-        {"answerId": 1, "questionId":  3},
-        {"answerId": 2, "questionId":  3}
-      ]
+        {
+          "answerId": 1,
+          "questionId": 3
+        },
+        {
+          "answerId": 2,
+          "questionId": 3
+        }
+      ],
+      "abuseType" : {
+        "controllingBehaviour": 1,
+        "forcingSubmissiveBehaviour": 0,
+        "imposingIdeasOrBehaviour": 0,
+        "techAbuse": 0.5,
+        "jealousy": 0.5,
+        "abuseByIsolation": 0,
+        "onlineHarassment": 0,
+        "psychologicalAbuse": 0,
+        "physicalAbuse": 0,
+        "verbalAbuse": 0,
+        "financialAbuse": 0
+      }
     },
     {
       "id": 3,
-      "question": "Have you stopped using social media or limited your social contacts?",
+      "question": "Have they stopped using social media or limited their social contacts?",
       "answers": [
         {
           "id": 1,
@@ -50,13 +88,32 @@
         }
       ],
       "nextQuestionId": [
-        {"answerId": 1, "questionId":  4},
-        {"answerId": 2, "questionId":  4}
-      ]
+        {
+          "answerId": 1,
+          "questionId": 4
+        },
+        {
+          "answerId": 2,
+          "questionId": 4
+        }
+      ],
+      "abuseType" : {
+        "controllingBehaviour": 1,
+        "forcingSubmissiveBehaviour": 0,
+        "imposingIdeasOrBehaviour": 0,
+        "techAbuse": 1,
+        "jealousy": 0,
+        "abuseByIsolation": 1,
+        "onlineHarassment": 1,
+        "psychologicalAbuse": 0,
+        "physicalAbuse": 0,
+        "verbalAbuse": 0,
+        "financialAbuse": 0
+      }
     },
     {
       "id": 4,
-      "question": "Are you taking the blame for issues in your relationship or for your partners negative or aggressive behavior?",
+      "question": "Are they taking the blame for issues in their relationship or for their partners negative or aggressive behavior?",
       "answers": [
         {
           "id": 1,
@@ -68,13 +125,32 @@
         }
       ],
       "nextQuestionId": [
-        {"answerId": 1, "questionId":  5},
-        {"answerId": 2, "questionId":  5}
-      ]
+        {
+          "answerId": 1,
+          "questionId": 5
+        },
+        {
+          "answerId": 2,
+          "questionId": 5
+        }
+      ],
+      "abuseType" : {
+        "controllingBehaviour": 0,
+        "forcingSubmissiveBehaviour": 0,
+        "imposingIdeasOrBehaviour": 1,
+        "techAbuse": 0,
+        "jealousy": 0,
+        "abuseByIsolation": 0,
+        "onlineHarassment": 0,
+        "psychologicalAbuse": 1,
+        "physicalAbuse": 0.5,
+        "verbalAbuse": 1,
+        "financialAbuse": 0
+      }
     },
     {
       "id": 5,
-      "question": "Are your finances being controlled or you have to ask your partner for money?",
+      "question": "Are their finances being controlled or they have to ask their partner for money?",
       "answers": [
         {
           "id": 1,
@@ -86,13 +162,32 @@
         }
       ],
       "nextQuestionId": [
-        {"answerId": 1, "questionId": 6},
-        {"answerId": 2, "questionId": 6}
-      ]
+        {
+          "answerId": 1,
+          "questionId": 6
+        },
+        {
+          "answerId": 2,
+          "questionId": 6
+        }
+      ],
+      "abuseType" : {
+        "controllingBehaviour": 1,
+        "forcingSubmissiveBehaviour": 1,
+        "imposingIdeasOrBehaviour": 0,
+        "techAbuse": 0,
+        "jealousy": 0,
+        "abuseByIsolation": 0,
+        "onlineHarassment": 0,
+        "psychologicalAbuse": 0,
+        "physicalAbuse": 0,
+        "verbalAbuse": 0,
+        "financialAbuse": 1
+      }
     },
     {
       "id": 6,
-      "question": "Is it forbidden for you to see family or friends?",
+      "question": "Is it forbidden for them to see family or friends?",
       "answers": [
         {
           "id": 1,
@@ -104,9 +199,28 @@
         }
       ],
       "nextQuestionId": [
-        {"answerId": 1, "questionId":  null},
-        {"answerId": 2, "questionId":  null}
-      ]
+        {
+          "answerId": 1,
+          "questionId": null
+        },
+        {
+          "answerId": 2,
+          "questionId": null
+        }
+      ],
+      "abuseType" : {
+        "controllingBehaviour": 1,
+        "forcingSubmissiveBehaviour": 1,
+        "imposingIdeasOrBehaviour": 0.5,
+        "techAbuse": 0,
+        "jealousy": 0,
+        "abuseByIsolation": 1,
+        "onlineHarassment": 0,
+        "psychologicalAbuse": 0.5,
+        "physicalAbuse": 0,
+        "verbalAbuse": 0,
+        "financialAbuse": 0
+      }
     }
   ]
 }
