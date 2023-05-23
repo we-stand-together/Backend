@@ -1,0 +1,74 @@
+ form: [
+    {
+      id: 1,
+      question: Do you think that you or a member of your family have changed their behavior or interests to make your partner happy?,
+      answer: [
+        "yes",
+        "no"
+      ],
+      "nextQuestionId": {
+        "yes": 2,
+        "no": 2
+      }
+    },
+    {
+      "id": 2,
+      "question": "Are you constantly worried about your location?",
+      "answer": [
+        "yes",
+        "no"
+      ],
+      "nextQuestionId": {
+        "yes": 3,
+        "no": 3
+      }
+    },
+    {
+      "id": 3,
+      "question": "Have you stopped using social media or limited your social contacts?",
+      "answer": [
+        "yes",
+        "no"
+      ],
+      "nextQuestionId": {
+        "yes": 4,
+        "no": 4
+      }
+    },
+    {
+      "id": 4,
+      "question": "Are you taking the blame for issues in your relationship or for your partners negative or aggressive behavior?",
+      "answer": [
+        "yes",
+        "no"
+      ],
+      "nextQuestionId": {
+        "yes": 5,
+        "no": 5
+      }
+    },
+    {
+      "id": 5,
+      "question": "Are your finances being controlled or you have to ask your partner for money?",
+      "answer": [
+        "yes",
+        "no"
+      ],
+      "nextQuestionId": {
+        "yes": 6,
+        "no": 6
+      }
+    },
+    {
+      "id": 6,
+      "question": "Is it forbidden for you to see family or friends?",
+      "answer": [
+        "yes",
+        "no"
+      ],
+      "nextQuestionId": {
+        "yes": null,
+        "no": null
+      }
+    }
+  ]
