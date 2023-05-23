@@ -4,6 +4,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder();
 
+
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -35,5 +36,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapGet("/hi", () => "helloworld");
+
+app.MapGet("/form", () => File.ReadAllText("Form.txt"));
 
 app.Run();
