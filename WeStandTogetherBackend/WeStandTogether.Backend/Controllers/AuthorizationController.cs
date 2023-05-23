@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -29,13 +30,7 @@ public class AuthorizationController : ControllerBase
         using var dbConnection = _dapperContext.CreateConnection();
         dbConnection.Open();
 
-        var command = dbConnection.CreateCommand();
-        command.CommandText =
-            $"SELECT count(*) FROM Users WHERE phone_number = '{request.PhoneNumber}' AND password = '{request.Password}';";
-
-        var usersCount = (Int64)(command.ExecuteScalar() ?? throw new Exception("Database Error"));
-
-        if (usersCount is 0)
+        if (!DoesUserExist(request, dbConnection))
         {
             return BadRequest("Wrong Phone Number Or Password");
         }
@@ -72,11 +67,27 @@ public class AuthorizationController : ControllerBase
         using var dbConnection = _dapperContext.CreateConnection();
         dbConnection.Open();
 
+        if (DoesUserExist(request, dbConnection))
+        {
+            return BadRequest("User Already Exists");
+        }
+
         var command = dbConnection.CreateCommand();
         command.CommandText =
             $"insert into Users (phone_number, password) values ('{request.PhoneNumber}', '{request.Password}');";
 
         command.ExecuteNonQuery();
         return Ok();
+    }
+
+    private bool DoesUserExist(AuthorizationRequest request, IDbConnection dbConnection)
+    {
+        var command = dbConnection.CreateCommand();
+        command.CommandText =
+            $"SELECT count(*) FROM Users WHERE phone_number = '{request.PhoneNumber}' AND password = '{request.Password}';";
+
+        var usersCount = (Int64)(command.ExecuteScalar() ?? throw new Exception("Database Error"));
+
+        return usersCount != 0;
     }
 }
