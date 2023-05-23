@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using WeStandTogether.Backend.Models.Authentication;
 using WeStandTogether.Dapper;
 
@@ -77,6 +78,14 @@ public class AuthorizationController : ControllerBase
             $"insert into Users (phone_number, password) values ('{request.PhoneNumber}', '{request.Password}');";
 
         command.ExecuteNonQuery();
+        return Ok();
+    }
+
+    [Authorize]
+    [HttpPost("validateToken")]
+    public IActionResult ValidateToken()
+    {
+        // Authentication happens automatically - if the attached token is invalid status 401 is returned
         return Ok();
     }
 
