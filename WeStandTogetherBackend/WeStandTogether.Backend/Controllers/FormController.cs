@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WeStandTogether.Backend.Controllers
+namespace WeStandTogether.Backend.Controllers;
+
+[ApiController]
+public class FormController : ControllerBase
 {
-    [ApiController]
-    public class FormController : ControllerBase
+    [HttpGet("form")]
+    public IActionResult GetForm()
     {
-        [HttpGet("form")]
-        public IActionResult GetForm()
-        {
-            return Ok(System.IO.File.ReadAllText("Form.json"));
-        }
+        return Ok(System.IO.File.ReadAllText("Form.json"));
     }
 }
