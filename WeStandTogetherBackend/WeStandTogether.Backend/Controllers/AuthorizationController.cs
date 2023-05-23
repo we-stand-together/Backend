@@ -8,13 +8,13 @@ using WeStandTogether.Backend.Models.Authentication;
 namespace WeStandTogether.Backend.Controllers
 {
     [ApiController]
-    public class IdentityController: ControllerBase
+    public class AuthorizationController : ControllerBase
     {
         private const string TokenSecret = "InRealScenariosThisShouldBeStoredSecurely!";
         private static readonly TimeSpan TokenLifeTime = TimeSpan.FromHours(24);
 
         [HttpPost("login")]
-        public IActionResult GenerateToken([FromBody] LoginRequest request)
+        public IActionResult GenerateToken([FromBody] AuthorizationRequest request)
         {
             Console.WriteLine("HI");
             var tokenHandler = new JwtSecurityTokenHandler();
