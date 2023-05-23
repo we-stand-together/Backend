@@ -19,7 +19,7 @@ public class AuthorizationController : ControllerBase
 
     private readonly DapperContext _dapperContext;
 
-    private const string TokenSecret = "InRealScenariosThisShouldBeStoredSecurely!";
+    private const string TokenSecret = "InRealScenariosThisShouldBeStoredSecurely";
     private static readonly TimeSpan TokenLifeTime = TimeSpan.FromHours(24);
 
     [HttpPost("login")]
