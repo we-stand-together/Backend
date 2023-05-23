@@ -24,7 +24,7 @@ namespace WeStandTogether.Backend.Controllers
         [HttpPost("login")]
         public IActionResult GenerateToken([FromBody] AuthorizationRequest request)
         {
-            Console.WriteLine("HI");
+            Console.WriteLine("Login");
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(TokenSecret);
 
@@ -48,6 +48,21 @@ namespace WeStandTogether.Backend.Controllers
             var jwt = tokenHandler.WriteToken(token);
 
             return Ok(jwt);
+        }
+
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] AuthorizationRequest request)
+        {
+            Console.WriteLine("Register");
+            using var dbConnection = _dapperContext.CreateConnection();
+            dbConnection.Open();
+
+            var command = dbConnection.CreateCommand();
+            command.CommandText =
+                $"insert into Users (phone_number, password) values ('{request.PhoneNumber}', '{request.Password}');";
+
+            command.ExecuteNonQuery();
+            return Ok();
         }
     }
 }
