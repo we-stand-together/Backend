@@ -5,7 +5,6 @@ namespace WeStandTogether.Backend.Controllers
     [ApiController]
     public class FormController : ControllerBase
     {
-
         [HttpGet("form")]
         public IActionResult GetForm()
         {
