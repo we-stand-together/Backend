@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using Microsoft.Data.SqlClient;
+using MySqlConnector;
 
 namespace WeStandTogether.Dapper
 {
@@ -14,7 +14,7 @@ namespace WeStandTogether.Dapper
 
         public IDbConnection CreateConnection()
         {
-            return new SqlConnection(_connectionString);
+            return new MySqlConnection(_connectionString);
         }
     }
 }
