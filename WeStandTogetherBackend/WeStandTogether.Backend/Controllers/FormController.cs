@@ -9,7 +9,7 @@ namespace WeStandTogether.Backend.Controllers
         [HttpGet("form")]
         public IActionResult GetForm()
         {
-            return Ok(System.IO.File.ReadAllText("Form.txt"));
+            return Ok(System.IO.File.ReadAllText("Form.json"));
         }
     }
 }
