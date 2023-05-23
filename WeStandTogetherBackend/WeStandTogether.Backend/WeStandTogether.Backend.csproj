@@ -11,5 +11,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.16" />
   </ItemGroup>
+	
+	
+
+  <ItemGroup>
+    <ProjectReference Include="..\WeStandTogether.Dapper\WeStandTogether.Dapper.csproj" />
+  </ItemGroup>
 
 </Project>

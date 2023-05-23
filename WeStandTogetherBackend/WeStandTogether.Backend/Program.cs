@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using WeStandTogether.Dapper;
 
 var builder = WebApplication.CreateBuilder();
 
@@ -26,6 +27,19 @@ builder.Services.AddAuthentication(x =>
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
+
+
+builder.Services.AddSingleton(provider =>
+{
+    return builder.Configuration.GetValue<string>("ConnectionStrings:Default");
+});
+
+builder.Services.AddSingleton<DapperContext>(provider =>
+{
+    var connectionString = provider.GetRequiredService<string>();
+    return new DapperContext(connectionString);
+});
+
 
 var app = builder.Build();
 
