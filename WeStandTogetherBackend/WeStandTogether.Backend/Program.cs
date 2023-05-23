@@ -5,6 +5,7 @@ using WeStandTogether.Dapper;
 
 var builder = WebApplication.CreateBuilder();
 
+
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -47,7 +48,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.MapGet("/hi", () => "helloworld");
 
 app.Run();
