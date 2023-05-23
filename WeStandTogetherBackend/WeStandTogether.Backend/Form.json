@@ -3,74 +3,110 @@
     {
       "id": 1,
       "question": "Do you think that you or a member of your family have changed their behavior or interests to make your partner happy?",
-      "answer": [
-        "yes",
-        "no"
+      "answers": [
+        {
+          "id": 1,
+          "answer": "yes"
+        },
+        {
+          "id": 2,
+          "answer": "no"
+        }
       ],
-      "nextQuestionId": {
-        "yes": 2,
-        "no": 2
-      }
+      "nextQuestionId": [
+        {"answerId": 1, "questionId":  2},
+        {"answerId": 2, "questionId":  2}
+      ]
     },
     {
       "id": 2,
       "question": "Are you constantly worried about your location?",
-      "answer": [
-        "yes",
-        "no"
+      "answers": [
+        {
+          "id": 1,
+          "answer": "yes"
+        },
+        {
+          "id": 2,
+          "answer": "no"
+        }
       ],
-      "nextQuestionId": {
-        "yes": 3,
-        "no": 3
-      }
+      "nextQuestionId": [
+        {"answerId": 1, "questionId":  3},
+        {"answerId": 2, "questionId":  3}
+      ]
     },
     {
       "id": 3,
       "question": "Have you stopped using social media or limited your social contacts?",
-      "answer": [
-        "yes",
-        "no"
+      "answers": [
+        {
+          "id": 1,
+          "answer": "yes"
+        },
+        {
+          "id": 2,
+          "answer": "no"
+        }
       ],
-      "nextQuestionId": {
-        "yes": 4,
-        "no": 4
-      }
+      "nextQuestionId": [
+        {"answerId": 1, "questionId":  4},
+        {"answerId": 2, "questionId":  4}
+      ]
     },
     {
       "id": 4,
       "question": "Are you taking the blame for issues in your relationship or for your partners negative or aggressive behavior?",
-      "answer": [
-        "yes",
-        "no"
+      "answers": [
+        {
+          "id": 1,
+          "answer": "yes"
+        },
+        {
+          "id": 2,
+          "answer": "no"
+        }
       ],
-      "nextQuestionId": {
-        "yes": 5,
-        "no": 5
-      }
+      "nextQuestionId": [
+        {"answerId": 1, "questionId":  5},
+        {"answerId": 2, "questionId":  5}
+      ]
     },
     {
       "id": 5,
       "question": "Are your finances being controlled or you have to ask your partner for money?",
-      "answer": [
-        "yes",
-        "no"
+      "answers": [
+        {
+          "id": 1,
+          "answer": "yes"
+        },
+        {
+          "id": 2,
+          "answer": "no"
+        }
       ],
-      "nextQuestionId": {
-        "yes": 6,
-        "no": 6
-      }
+      "nextQuestionId": [
+        {"answerId": 1, "questionId": 6},
+        {"answerId": 2, "questionId": 6}
+      ]
     },
     {
       "id": 6,
       "question": "Is it forbidden for you to see family or friends?",
-      "answer": [
-        "yes",
-        "no"
+      "answers": [
+        {
+          "id": 1,
+          "answer": "yes"
+        },
+        {
+          "id": 2,
+          "answer": "no"
+        }
       ],
-      "nextQuestionId": {
-        "yes": null,
-        "no": null
-      }
+      "nextQuestionId": [
+        {"answerId": 1, "questionId":  null},
+        {"answerId": 2, "questionId":  null}
+      ]
     }
   ]
 }
