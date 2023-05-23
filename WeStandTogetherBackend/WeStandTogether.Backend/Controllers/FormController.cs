@@ -1,13 +1,17 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using WeStandTogether.Backend.Models.Form;
 
-namespace WeStandTogether.Backend.Controllers
+namespace WeStandTogether.Backend.Controllers;
+
+[Authorize]
+[ApiController]
+public class FormController : ControllerBase
 {
-    [ApiController]
-    public class FormController : ControllerBase
+    [HttpGet("form")]
+    public IActionResult GetForm()
     {
         [HttpGet("form")]
         public IActionResult GetForm()

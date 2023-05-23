@@ -5,7 +5,6 @@ using WeStandTogether.Dapper;
 
 var builder = WebApplication.CreateBuilder();
 
-
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -24,23 +23,16 @@ builder.Services.AddAuthentication(x =>
         ValidateIssuerSigningKey = true
     };
 });
-
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
 
-
-builder.Services.AddSingleton(provider =>
-{
-    return builder.Configuration.GetValue<string>("ConnectionStrings:Default");
-});
-
+builder.Services.AddSingleton(_ => builder.Configuration.GetValue<string>("ConnectionStrings:Default"));
 builder.Services.AddSingleton<DapperContext>(provider =>
 {
     var connectionString = provider.GetRequiredService<string>();
     return new DapperContext(connectionString);
 });
-
 
 var app = builder.Build();
 
