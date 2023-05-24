@@ -1,3 +1,3 @@
 namespace WeStandTogether.Backend.Models.Memory;
 
-public record MemoryRequest(string OwnerPhoneNumber);
+public record MemoryRequest(DateOnly Date);

@@ -1,3 +1,3 @@
 namespace WeStandTogether.Backend.Models.Form;
 
-public record Answer(int Id, string answer);
+public record Answer(int id, string answer);

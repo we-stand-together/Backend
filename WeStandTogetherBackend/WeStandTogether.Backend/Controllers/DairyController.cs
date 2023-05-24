@@ -16,15 +16,18 @@ public class DairyController : ControllerBase
     
     private readonly DapperContext _dapperContext;
 
-    [HttpGet("dairy/memory")]
+    [HttpGet("dairy/memories")]
     public IActionResult GetMemory([FromBody] MemoryRequest request)
     {
         var dbConnection = _dapperContext.CreateConnection();
         dbConnection.Open();
 
         var command = dbConnection.CreateCommand();
-        command.CommandText = $"SELECT * FROM Memories WHERE owner_phone_number = '{request.OwnerPhoneNumber}'";
+        command.CommandText = $"SELECT * FROM Memories " +
+                              $"WHERE date = DATE('{request.Date})'" +
+                              $"AND owner_phone_number = '{User.Identity.Name}'";
 
+        Console.WriteLine(command.CommandText);
         var memories = command.GetResults<Memory>().ToList();
         return Ok(memories);
     }
