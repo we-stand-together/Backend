@@ -102,6 +102,7 @@ public class DiaryController : ControllerBase
 
     private IEnumerable<DateOnly> ExtractDatesFromResultsReader(IDataReader resultsReader)
     {
+        // TODO: This endpoint is buggy - only return first row instead of all of the dates
         for (var i = 0; i < resultsReader.FieldCount; i++)
         {
             if (resultsReader.Read())
