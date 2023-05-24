@@ -43,7 +43,8 @@ public class AuthorizationController : ControllerBase
         {
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new(JwtRegisteredClaimNames.Sub, request.PhoneNumber),
-            new("phone_number", request.PhoneNumber)
+            new("phone_number", request.PhoneNumber),
+            new(ClaimTypes.Name, request.PhoneNumber)
         };
 
         var tokenDescriptor = new SecurityTokenDescriptor
