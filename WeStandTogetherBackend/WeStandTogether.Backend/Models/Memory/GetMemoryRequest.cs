@@ -1,3 +1,3 @@
 namespace WeStandTogether.Backend.Models.Memory;
 
-public record MemoryRequest(string Date);
+public record GetMemoryRequest(string Date);
