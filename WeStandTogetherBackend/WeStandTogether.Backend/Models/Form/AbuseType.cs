@@ -53,17 +53,17 @@ public class AbuseType
     public AbuseType GetPercentage(double max)
     {
         var abuseType = new AbuseType();
-        abuseType.controllingBehaviour /= max;
-        abuseType.forcingSubmissiveBehaviour /= max;
-        abuseType.imposingIdeasOrBehaviour /= max;
-        abuseType.techAbuse /= max;
-        abuseType.jealousy /= max;
-        abuseType.abuseByIsolation /= max;
-        abuseType.onlineHarassment /= max;
-        abuseType.psychologicalAbuse /= max;
-        abuseType.physicalAbuse /= max;
-        abuseType.verbalAbuse /= max;
-        abuseType.financialAbuse /= max;
+        abuseType.controllingBehaviour = controllingBehaviour / max;
+        abuseType.forcingSubmissiveBehaviour = forcingSubmissiveBehaviour / max;
+        abuseType.imposingIdeasOrBehaviour = imposingIdeasOrBehaviour / max;
+        abuseType.techAbuse = techAbuse / max;
+        abuseType.jealousy = jealousy / max;
+        abuseType.abuseByIsolation = abuseByIsolation / max;
+        abuseType.onlineHarassment = onlineHarassment / max;
+        abuseType.psychologicalAbuse = psychologicalAbuse / max;
+        abuseType.physicalAbuse = physicalAbuse / max;
+        abuseType.verbalAbuse = verbalAbuse / max;
+        abuseType.financialAbuse = financialAbuse / max;
 
         return abuseType;
     }
