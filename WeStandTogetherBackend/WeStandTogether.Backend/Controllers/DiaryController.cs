@@ -20,7 +20,7 @@ public class DiaryController : ControllerBase
     public IActionResult GetMemory([FromBody] MemoryRequest request)
     {
         var memoryDate = DateOnly.Parse(request.Date);
-        
+
         Console.WriteLine("Diary/Memories");
         var dbConnection = _dapperContext.CreateConnection();
         dbConnection.Open();
@@ -28,15 +28,29 @@ public class DiaryController : ControllerBase
         var command = dbConnection.CreateCommand();
         var startOfDay = memoryDate.ToDateTime(TimeOnly.MinValue).ToString("yyyy-MM-dd HH:mm:ss");
         var endOfDay = memoryDate.ToDateTime(TimeOnly.MaxValue).ToString("yyyy-MM-dd HH:mm:ss");
-        
+
         command.CommandText = $"SELECT * FROM Memories " +
                               $"WHERE date >= '{startOfDay}'" +
                               $"AND date <= '{endOfDay}'" +
                               $"AND owner_phone_number = '{User.Identity.Name}';";
 
         Console.WriteLine(command.CommandText);
-        var memories = command.GetResults<Memory>().ToList();
-        return Ok(memories);
+
+        var resultsReader = command.ExecuteReader();
+        var memories = new List<Memory>();
+        for (var i = 0; i < resultsReader.FieldCount; i++)
+        {
+            if (resultsReader.Read())
+            {
+                memories.Add(new Memory
+                {
+                    MemoryId = (string)resultsReader[0],
+                    
+                });
+            }
+        }
+
+        return Ok();
     }
 
     [HttpGet("diary/calender")]
