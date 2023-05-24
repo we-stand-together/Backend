@@ -17,7 +17,7 @@ public class FormController : ControllerBase
         return Ok(System.IO.File.ReadAllText("Form.json"));
     }
 
-    [HttpGet("form/result")]
+    [HttpPost("form/result")]
     public IActionResult GetFormResult([FromBody] FormAnswers formAnswers)
     {
         Console.WriteLine("JI");
